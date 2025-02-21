@@ -6,6 +6,23 @@ const RegisterUserSchema = zod.object({
   password: zod.string().min(6).max(255),
 });
 
-export default function validateRegisterUser(data) {
+const LoginUserSchema = zod.object({
+  email: zod.string().email().max(255),
+  password: zod.string().min(6).max(255),
+});
+
+function validateRegisterUser(data) {
   return RegisterUserSchema.safeParse(data);
 }
+
+function validateLoginUser(data) {
+  return LoginUserSchema.safeParse(data);
+}
+
+
+const userSchema = {
+  validateRegisterUser,
+  validateLoginUser,
+};
+
+export default userSchema;

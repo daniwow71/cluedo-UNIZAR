@@ -6,6 +6,7 @@ export const UserRoutes = ({ userModel }) => {
   const userController = new UserController({ userModel });
 
   userRouter.post('/register', userController.register);
+  userRouter.post('/login', userController.login);
 
   return userRouter;
 }

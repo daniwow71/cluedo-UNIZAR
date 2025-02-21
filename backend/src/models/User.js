@@ -21,9 +21,6 @@ const UserModel = sequelize.define('User', {
   password: {
     type: DataTypes.STRING(255),
     allowNull: false,
-    set(value) {
-      this.setDataValue('password', bcrypt.hashSync(value, 10));
-    }
   },
 }, {
   sequelize,
