@@ -3,8 +3,10 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import { UserRoutes } from '../routes/User.Routes.js';
 
+const DEFAULT_PORT = 3000;
+
 dotenv.config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || DEFAULT_PORT;
 
 
 export const createApp = ({userModel}) => {
