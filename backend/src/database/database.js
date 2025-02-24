@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const sequelize = new Sequelize('user_test', process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+const sequelize = new Sequelize('cluedo-unizar', process.env.DB_USERNAME, process.env.DB_PASSWORD, {
   host: 'localhost',
   dialect: 'mysql',
   port: 3306,
@@ -19,6 +19,7 @@ const testConnection = async () => {
 }
 
 testConnection();
+
 
 
 export default sequelize;
