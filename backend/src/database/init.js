@@ -4,19 +4,20 @@ import UserModel from '../models/User.js';
 
 const initDatabase = async () => {
     try {
-        const tempSequelize = new Sequelize({
-            username: process.env.DB_USERNAME,
-            password: process.env.DB_PASSWORD,
-            host: 'localhost',
-            dialect: 'mysql'
-        });
+      const tempSequelize = new Sequelize({
+        host: process.env.DB_HOST,
+        username: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        dialect: 'mysql'
+      });
 
-        await tempSequelize.query('CREATE DATABASE IF NOT EXISTS `cluedo-unizar`');
-        await tempSequelize.close();
+      await tempSequelize.query(`CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\`;`);
+      await tempSequelize.close();
 
-        await UserModel.sync();
+      await UserModel.sync();
 
-        await sequelize.sync({ force: true });
+      await sequelize.sync({ force: true });
       console.log('Database initialized successfully');
 
     } catch (error) {

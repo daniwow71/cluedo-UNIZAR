@@ -70,6 +70,21 @@ cluedo/
     cd ../frontend
     pnpm run dev
     ```
+## 🐳 Docker
+
+```bash
+
+# Construir y levantar contenedores backend
+cd backend
+docker-compose up -d --build
+
+# Detener contenedores
+docker-compose down
+
+# Ver logs
+docker-compose logs -f
+```
+
 
 ## 🔑 Autenticación
 
