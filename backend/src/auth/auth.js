@@ -12,8 +12,18 @@ const createToken = (user) => {
   });
 }
 
+const verifyToken = (token) => {
+  try {
+    return jwt.verify(token, JWT_SECRET);
+  } catch (error) {
+    console.error('Token verification failed:', error.message);
+    throw new Error('Invalid token');
+  }
+}
+
 const auth = {
-  createToken
+  createToken,
+  verifyToken
 }
 
 export default auth;
