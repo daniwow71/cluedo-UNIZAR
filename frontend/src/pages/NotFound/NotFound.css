@@ -14,36 +14,6 @@
   flex-direction: column;
 }
 
-.decorative-element {
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.decorative-element.circle {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 202, 40, 0.2), rgba(255, 77, 77, 0.1));
-}
-
-.decorative-element.dots {
-  width: 200px;
-  height: 200px;
-  background-image: radial-gradient(var(--color-text-muted) 1px, transparent 2px);
-  background-size: 15px 15px;
-}
-
-.decorative-element.top-left {
-  top: -150px;
-  left: -100px;
-}
-
-.decorative-element.bottom-right {
-  bottom: -50px;
-  right: -50px;
-}
-
 .not-found-content {
   text-align: center;
   max-width: 600px;

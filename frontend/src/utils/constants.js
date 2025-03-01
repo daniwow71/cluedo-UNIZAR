@@ -78,3 +78,38 @@ export const ROUTES = {
   GAMES: "/games",
   PROFILE: "/profile"
 };
+
+export const REGISTER_FORM_FIELDS = [
+  {
+    id: 'username',
+    name: 'username',
+    type: 'text',
+    label: 'Nombre de usuario',
+    autoFocus: true,
+    required: true,
+  },
+  {
+    id: 'email',
+    name: 'email',
+    type: 'text',
+    label: 'Correo electrónico',
+    autoFocus: false,
+    required: true,
+  },
+  {
+    id: 'password',
+    name: 'password',
+    type: 'password',
+    label: 'Contraseña',
+    autoFocus: false,
+    required: true,
+  },
+  {
+    id: 'confirmPassword',
+    name: 'confirmPassword',
+    type: 'password',
+    label: 'Confirmar contraseña',
+    autoFocus: false,
+    required: true,
+  }
+];
