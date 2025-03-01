@@ -113,3 +113,26 @@ export const REGISTER_FORM_FIELDS = [
     required: true,
   }
 ];
+
+export const LOGIN_FORM_FIELDS = [
+  {
+    id: 'email',
+    name: 'email',
+    type: 'email',
+    label: 'Correo electrónico',
+    autoFocus: true,
+    autoComplete: 'email',
+    required: true,
+    placeholder: 'ejemplo@correo.com'
+  },
+  {
+    id: 'password',
+    name: 'password',
+    type: 'password',
+    label: 'Contraseña',
+    autoFocus: false,
+    autoComplete: 'current-password',
+    required: true,
+    placeholder: 'Ingresa tu contraseña'
+  }
+];

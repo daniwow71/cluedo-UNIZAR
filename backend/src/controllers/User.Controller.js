@@ -60,11 +60,13 @@ export default class UserController {
 
       const token = auth.createToken(user);
 
+      const { password, id, ...userData } = user.dataValues;
+
       return res.status(200).cookie('token', token, {
         httpOnly: true,
         secure: true,
         sameSite: 'none'
-      }).send();
+      }).json({ message: MESSAGES.LOGIN_SUCCESS, user: userData });
     }
     catch (error) {
       return res.status(500).json({ error: MESSAGES.ERROR_500 });

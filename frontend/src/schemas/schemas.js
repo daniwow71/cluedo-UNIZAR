@@ -17,10 +17,24 @@ const RegisterUserSchema = z.object({
   message: "Las contraseñas no coinciden",
 });
 
+const LoginUserSchema = z.object({
+  email: z.string()
+    .email({ message: "Formato de email inválido" })
+    .max(255, { message: "El email no puede exceder los 255 caracteres" }),
+  password: z.string()
+    .min(6, { message: "La contraseña debe tener al menos 6 caracteres" })
+    .max(255, { message: "La contraseña no puede exceder los 255 caracteres" }),
+});
+
 function validateRegisterUser(data) {
   return RegisterUserSchema.safeParse(data);
 }
 
+function validateLoginUser(data) {
+  return LoginUserSchema.safeParse(data);
+}
+
 export const userSchema = {
   validateRegisterUser,
+  validateLoginUser
 };

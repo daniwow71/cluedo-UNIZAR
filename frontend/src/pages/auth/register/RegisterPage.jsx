@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../../utils/constants';
-import useRegisterPage from '../../hooks/useRegisterPage';
-import { REGISTER_FORM_FIELDS } from '../../utils/constants';
-import FormField from './components/FormField';
+import { ROUTES } from '../../../utils/constants';
+import useRegisterPage from '../../../hooks/useRegisterPage';
+import { REGISTER_FORM_FIELDS } from '../../../utils/constants';
+import FormField from '../components/FormField';
 import "./styles/RegisterPage.css";
 
 const RegisterPage = () => {

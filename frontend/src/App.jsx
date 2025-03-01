@@ -3,7 +3,8 @@ import Header from './components/header/Header.jsx';
 import Footer from './components/footer/Footer.jsx';
 import Home from './pages/home/Home.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
-import RegisterPage from './pages/register/RegisterPage.jsx';
+import RegisterPage from './pages/auth/register/RegisterPage.jsx';
+import LoginPage from './pages/auth/login/LoginPage.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ROUTES } from './utils/constants';
 import './App.css';
@@ -21,6 +22,7 @@ const App = () => {
       <Routes>
         <Route path={ROUTES.HOME} element={<Home user={user} />} />
         <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
+        <Route path={ROUTES.LOGIN} element={<LoginPage setUser={setUser} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
