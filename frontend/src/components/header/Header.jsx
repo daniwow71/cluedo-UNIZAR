@@ -5,7 +5,11 @@ import useHeader from '../../hooks/useHeader';
 import { ROUTES } from '../../utils/constants';
 
 const Header = ({ user, onLogout }) => {
-  const { isMobile, toggleMenu, navClasses, navListClasses } = useHeader()
+  const { isMobile, ismenuOpened, toggleMenu, navClasses, navListClasses } = useHeader()
+
+  const handleOnClickNav = () => {
+    isMobile && toggleMenu()
+  }
 
   return (
     <header className="header">
@@ -17,7 +21,14 @@ const Header = ({ user, onLogout }) => {
         </button>
       )}
 
-      <nav className={navClasses}>
+      {isMobile && ismenuOpened && (
+        <div
+          className="menu-backdrop active"
+          onClick={toggleMenu}
+          aria-hidden="true"
+        />
+      )}
+      <nav className={navClasses} onClick={handleOnClickNav}>
         <ul className={navListClasses}>
           <li className="header-nav-item"><Link to={ROUTES.HOME}>Inicio</Link></li>
           <li className="header-nav-item"><Link to={ROUTES.GAMES}>Partidas</Link></li>

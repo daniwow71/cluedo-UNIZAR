@@ -22,6 +22,7 @@ const useHeader = () => {
   return {
     isMobile,
     toggleMenu,
+    ismenuOpened,
     navClasses,
     navListClasses
   };

@@ -1,4 +1,6 @@
 .header {
+  position: sticky;
+  top: 0;
   background-color: var(--color-primary);
   color: var(--color-text-light);
   padding: 1rem;
@@ -6,7 +8,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  z-index: 100;
+}
+
+.menu-backdrop.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .header-title {
@@ -43,6 +54,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  width: 100%;
 }
 
 .header-nav-item a:hover,
