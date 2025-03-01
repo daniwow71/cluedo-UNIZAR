@@ -7,6 +7,7 @@ import RegisterPage from './pages/auth/register/RegisterPage.jsx';
 import LoginPage from './pages/auth/login/LoginPage.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ROUTES } from './utils/constants';
+import { logoutUser } from './services/User';
 import './App.css';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
 
   const handleLogout = () => {
     setUser(null);
+    logoutUser();
   };
 
   return (

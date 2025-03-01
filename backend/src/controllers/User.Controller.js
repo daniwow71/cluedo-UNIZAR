@@ -74,7 +74,7 @@ export default class UserController {
   }
 
   logout = async (req, res) => {
-    return res.status(200).clearCookie('token').send();
+    return res.status(200).clearCookie('token').json({ message: MESSAGES.LOGOUT_SUCCESS });
   }
 
   changePassword = async (req, res) => {

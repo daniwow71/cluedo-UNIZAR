@@ -22,3 +22,11 @@ export const loginUser = async (userData) => {
     })
     .then((res) => res.json())
 };
+
+export const logoutUser = async () => {
+  return await fetch(`${API_URL}/user/logout`, {
+    method: 'POST',
+    credentials: 'include',
+  })
+    .then((res) => res.json())
+}
