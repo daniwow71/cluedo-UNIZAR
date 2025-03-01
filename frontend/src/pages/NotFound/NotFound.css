@@ -1,0 +1,128 @@
+.not-found-container {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.not-found-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.decorative-element {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.decorative-element.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 202, 40, 0.2), rgba(255, 77, 77, 0.1));
+}
+
+.decorative-element.dots {
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(var(--color-text-muted) 1px, transparent 2px);
+  background-size: 15px 15px;
+}
+
+.decorative-element.top-left {
+  top: -150px;
+  left: -100px;
+}
+
+.decorative-element.bottom-right {
+  bottom: -50px;
+  right: -50px;
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 600px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.not-found-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  border-radius: 50%;
+  box-shadow: 0 10px 25px var(--color-shadow-medium);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.not-found-icon {
+  font-size: 4rem;
+}
+
+.not-found-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5rem;
+}
+
+.not-found-404 {
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+.not-found-message {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.not-found-clue {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.clue-card {
+  width: 60px;
+  height: 90px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--color-shadow-light);
+  box-shadow: 0 4px 10px var(--color-shadow-light);
+}
+
+.clue-card:nth-child(1) {
+  animation: cardWiggle 3s infinite 0.1s;
+  background: linear-gradient(45deg, rgba(255, 202, 40, 0.1), white);
+}
+
+.clue-card:nth-child(2) {
+  animation: cardWiggle 3s infinite 0.2s;
+  background: linear-gradient(45deg, rgba(255, 77, 77, 0.1), white);
+}
+
+.clue-card:nth-child(3) {
+  animation: cardWiggle 3s infinite 0.3s;
+  background: linear-gradient(45deg, rgba(30, 41, 59, 0.1), white);
+}
+
+@keyframes cardWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
