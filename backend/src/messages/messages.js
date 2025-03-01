@@ -1,15 +1,15 @@
-const USER_NOT_FOUND = "User not found";
-const INVALID_PASSWORD = "Invalid password";
-const USER_ALREADY_EXISTS = "User already exists";
-const REGISTRATION_SUCCESS = "Registration successful";
-const LOGIN_SUCCESS = "Login successful";
-const INVALID_DATA = "Invalid data";
-const ERROR_500 = "Internal server error";
+const USER_NOT_FOUND = "Usuario no encontrado";
+const INVALID_PASSWORD = "Contraseña incorrecta";
+const EMAIL_ALREADY_EXISTS = "El email ya existe";
+const REGISTRATION_SUCCESS = "Registro completado con éxito";
+const LOGIN_SUCCESS = "Sesión iniciada correctamente";
+const INVALID_DATA = "Datos inválidos";
+const ERROR_500 = "Error interno del servidor";
 
 const MESSAGES = {
   USER_NOT_FOUND,
   INVALID_PASSWORD,
-  USER_ALREADY_EXISTS,
+  EMAIL_ALREADY_EXISTS,
   REGISTRATION_SUCCESS,
   LOGIN_SUCCESS,
   INVALID_DATA,

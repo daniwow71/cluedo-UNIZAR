@@ -23,7 +23,7 @@ export default class UserController {
     });
 
     if (existingUser) {
-      return res.status(409).json({ error: MESSAGES.USER_ALREADY_EXISTS });
+      return res.status(409).json({ error: MESSAGES.EMAIL_ALREADY_EXISTS });
     }
 
     try {
