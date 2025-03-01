@@ -1,0 +1,18 @@
+/* Base layout */
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+/* Typography */
+h1, h2, h3 {
+  color: var(--color-text-primary);
+  margin-top: 0;
+}
+
+p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}

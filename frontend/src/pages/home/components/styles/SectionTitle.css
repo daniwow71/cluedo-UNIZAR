@@ -1,0 +1,18 @@
+.home-section-title {
+  font-size: 2.25rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.home-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-red), var(--color-accent-yellow));
+  border-radius: 2px;
+}

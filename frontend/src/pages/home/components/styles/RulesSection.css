@@ -1,0 +1,81 @@
+.home-rules {
+  padding: 6rem 0;
+  border-radius: 16px;
+  margin: 4rem 0;
+  background-color: var(--color-bg-secondary);
+  box-shadow: 0 4px 30px var(--color-shadow-light);
+}
+
+.home-rules-content {
+  display: grid;
+  gap: 3rem;
+  padding: 0 1rem;
+}
+
+.home-rules-content.mobile {
+  grid-template-columns: 1fr;
+}
+
+.home-rules-content.desktop {
+  grid-template-columns: 1fr 1fr;
+}
+
+.home-rules-text {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.home-rule-badge {
+  padding: 0.4rem 1rem;
+  background-color: inherit;
+  text-decoration: underline;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+  font-size: 1.7rem;
+}
+
+.home-rules-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.home-rules-list {
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-rule-item {
+  margin-bottom: 1rem;
+  position: relative;
+  color: var(--color-text-primary);
+  display: flex;
+  gap: 1rem;
+}
+
+.home-rule-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-accent-yellow);
+  color: var(--color-primary);
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.home-rules-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px var(--color-shadow-medium);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.home-rules-image:hover {
+  transform: scale(1.02);
+}
