@@ -16,8 +16,6 @@
     *   🔑 **JSON Web Tokens (JWT):** Para una autenticación segura y basada en tokens.
     *   🗄️ **Sequelize:** ORM (Object-Relational Mapper) para interactuar con la base de datos MySQL.
     *   🐬 **MySQL:** El sistema de gestión de bases de datos relacional.
-    *   🔒 **bcrypt:** Para el hash seguro de contraseñas.
-    *   🌿 **dotenv:** Para gestionar variables de entorno de forma segura.
 
 ## 📂 Estructura del Proyecto
 ```
@@ -74,15 +72,17 @@ cluedo/
 
 ```bash
 
-# Construir y levantar contenedores backend
-cd backend
-docker-compose up -d --build
+# Crear el archivo de variables de entorno:
+cp .env.example .env
 
-# Detener contenedores
-docker-compose down
+# Construir y levantar todos los contenedores
+docker compose up --build
 
-# Ver logs
-docker-compose logs -f
+# Para ejecutar en segundo plano
+docker compose up -d --build
+
+# Para ver logs cuando se ejecuta en segundo plano
+docker compose logs -f
 ```
 
 
