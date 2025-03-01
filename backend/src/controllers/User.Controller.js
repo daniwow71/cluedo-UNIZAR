@@ -91,7 +91,6 @@ export default class UserController {
       }
 
       const decoded = auth.verifyToken(token);
-      console.log('Decoded token:', decoded);
 
       const user = await this.userModel.findByPk(decoded.id);
       if (!user) {
