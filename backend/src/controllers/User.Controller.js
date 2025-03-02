@@ -49,13 +49,13 @@ export default class UserController {
       });
 
       if (!user) {
-        return res.status(404).json({ error: MESSAGES.USER_NOT_FOUND });
+        return res.status(401).json({ error: MESSAGES.INVALID_CREDENTIALS });
       }
 
       const isPasswordValid = await argon2.verify(user.password, result.data.password);
 
       if (!isPasswordValid) {
-        return res.status(401).json({ error: MESSAGES.INVALID_PASSWORD });
+        return res.status(401).json({ error: MESSAGES.INVALID_CREDENTIALS });
       }
 
       const token = auth.createToken(user);
