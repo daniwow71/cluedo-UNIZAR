@@ -6,7 +6,7 @@ import FormField from '../components/FormField';
 import "./styles/LoginPage.css";
 
 const LoginPage = ({ setUser }) => {
-  const { errors, isLoading, handleSubmit } = useLoginPage(setUser);
+  const { errors, isLoading, handleSubmit, serverError } = useLoginPage(setUser);
 
   return (
     <main className="login">
@@ -24,7 +24,7 @@ const LoginPage = ({ setUser }) => {
             <FormField
               key={field.id}
               field={field}
-              error={errors[field.name]}
+              error={errors[field.name] || serverError}
             />
           ))}
 

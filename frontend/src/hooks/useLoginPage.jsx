@@ -6,6 +6,7 @@ import { loginUser } from '../services/User';
 const useLoginPage = (setUser) => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [serverError, setServerError] = useState(null);
 
   const navigate = useNavigate();
 
@@ -14,6 +15,7 @@ const useLoginPage = (setUser) => {
 
     setErrors({});
     setIsLoading(true);
+    setServerError(null);
 
     try {
       const formData = new FormData(e.target);
@@ -24,11 +26,10 @@ const useLoginPage = (setUser) => {
         setErrors(validationResult.error.formErrors.fieldErrors);
         return;
       }
-      console.log('Datos de inicio de sesión:', data);
       const response = await loginUser(data);
 
       if (response.error) {
-        console.error('Error en inicio de sesión:', response.error);
+        setServerError(response.error);
         return
       }
       setUser(response.user);
@@ -45,7 +46,8 @@ const useLoginPage = (setUser) => {
   return {
     errors,
     isLoading,
-    handleSubmit
+    handleSubmit,
+    serverError
   };
 };
 
