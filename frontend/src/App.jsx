@@ -5,6 +5,7 @@ import Home from './pages/home/Home.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 import RegisterPage from './pages/auth/register/RegisterPage.jsx';
 import LoginPage from './pages/auth/login/LoginPage.jsx';
+import StartGames from './pages/startGames/StartGames.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ROUTES } from './utils/constants';
 import { logoutUser } from './services/User';
@@ -25,6 +26,7 @@ const App = () => {
         <Route path={ROUTES.HOME} element={<Home user={user} />} />
         <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
         <Route path={ROUTES.LOGIN} element={<LoginPage setUser={setUser} />} />
+        <Route path={ROUTES.GAMES} element={<StartGames />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
