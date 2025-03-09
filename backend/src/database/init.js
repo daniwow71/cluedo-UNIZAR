@@ -1,6 +1,6 @@
 import sequelize from './database.js';
 import { Sequelize } from 'sequelize';
-import UserModel from '../models/User.js';
+import UserModel from '../models/Usuario.js';
 
 const initDatabase = async () => {
   try {
@@ -13,7 +13,7 @@ const initDatabase = async () => {
 
     await tempSequelize.query(`CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\`;`);
     await tempSequelize.close();
-
+    
     await UserModel.sync();
 
     await sequelize.sync({ force: true });
